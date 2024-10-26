@@ -19,10 +19,11 @@ function SidePanel(props: props) {
   return (
     <Box
     sx={{
-      display: props.open? 'initial':'none',
-      flex: props.open ? '0 0 250px' : '0',
-      transition: 'flex 0.3s ease',
-      padding: 2,
+      //display: props.open? 'initial':'none',
+      // flex: props.open ? '0 0 250px' : '0',
+      width:props.open ? '250px' : '0',
+      transition: 'width 0.3s ease',
+      //padding: 2,
       backgroundColor: '#e0e0e0',
     }}
   >
@@ -69,10 +70,12 @@ export default function Home() {
               {/* Main Content Area */}
               <Box
                 sx={{
-                  flex: sideOpen ? '0 0 calc(100% - 250px)' : '1',
-                  transition: 'flex 0.3s ease',
+                  width:sideOpen ? 'calc(100% - 250px)' : '100%',
+                  // flex: sideOpen ? '0 0 calc(100% - 250px)' : '1',
+                  transition: 'width 0.3s ease',
                   padding: 2,
                   backgroundColor: red[50],
+                  overflow: 'hidden', // overflow 속성 추가
                 }}
               >
                  <Typography variant="body1" mt={2}>
